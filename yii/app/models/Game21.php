@@ -89,5 +89,23 @@ class Game21 extends Model
         endif;
         return [$PP, $CP];
     }
+
+    public function highscore($points, $CP, $PP): void
+    {
+        if ($points == "Player won!") 
+            Yii::$app->db->createCommand()->insert('highscore', [
+                'name' => 'Player',
+                'score' => $PP,
+                'game' => 'Game 21',
+                'closest' => abs($PP - 21)
+            ])->execute();
+        elseif ($points == "Computer Won!")
+            Yii::$app->db->createCommand()->insert('highscore', [
+                'name' => 'Computer',
+                'score' => $CP,
+                'game' => 'Game 21',
+                'closest' => abs($CP - 21)
+            ])->execute();
+    }
 }
 

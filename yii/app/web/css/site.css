@@ -97,6 +97,39 @@ a.desc:after {
     border: none;
 }
 
+
+#highscore {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin: 0 auto;
+
+}
+  
+#highscore td, #highscore th {
+    padding: 8px;
+    width: 150px;
+}
+
+#highscore th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #23527D;
+    color: white;
+    text-align: center;
+}
+
+#books {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+}
+  
+#books td, #books th {
+    padding-top: 10px;
+    width: 450px;
+}
+
+
+
 @media(max-width:767px) {
     .nav li > form > button.logout {
         display:block;

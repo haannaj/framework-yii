@@ -13,8 +13,10 @@ class BookController extends Controller
         $countries = $query->orderBy('title')
             ->all();
 
+
         return $this->render('index', [
-            'countries' => $countries
+            'countries' => $countries,
+            // 'post' => $posts
         ]);
     }
 }

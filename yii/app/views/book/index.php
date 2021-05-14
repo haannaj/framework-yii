@@ -6,21 +6,26 @@ use yii\widgets\LinkPager;
 $this->title = 'Books';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<h1><?= Html::encode($this->title) ?></h1>
-
-<?php foreach ($countries as $country): ?>
-<table style="width:100%">
+<h1><?= Html::encode($this->title) ?></h1><br>
+<table id="books">
   <tr>
-    <td><b><?= $country->title ?></b></td>
+    <?php foreach ($countries as $country): ?>
+      <td><b><?= $country->title ?></b></td>
+    <?php endforeach; ?>
   </tr>
   <tr>
-    <td>Author: <?= $country->author ?></td>
+    <?php foreach ($countries as $country): ?>
+      <td><?= $country->author ?></td>
+    <?php endforeach; ?>
   </tr>
   <tr>
-    <td>ISBN: <?= $country->isbn ?></td>
+    <?php foreach ($countries as $country): ?>
+      <td>ISBN: <?= $country->isbn ?></td>
+    <?php endforeach; ?>
   </tr>
   <tr>
-    <td><?php echo Html::img('@web/img/'. $country->image .'.jpeg') ?></td><br><br>
+    <?php foreach ($countries as $country): ?>
+      <td><?php echo Html::img('@web/img/'. $country->image .'.jpeg') ?></td>
+    <?php endforeach; ?>
   </tr>
 </table>
-<?php endforeach; ?>

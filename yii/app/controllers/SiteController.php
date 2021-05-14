@@ -169,6 +169,7 @@ class SiteController extends Controller
             $points = $dice->pointsGame($gameOverMessage, $computerPoint, $totalSum);
             $countPoints = $dice->pointsRound($points, $model->PP, $model->CP);
             
+            $dice->highscore($points, $computerPoint, $totalSum);
 
             return $this->render('game', ['model' => $model, 
             'message' => $dices,
