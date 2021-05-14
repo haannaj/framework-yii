@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 
-class EntryForm extends Model
+class GameForm extends Model
 {
     public $dice;
     public $stop;

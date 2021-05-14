@@ -10,6 +10,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -29,7 +30,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => "The Game Imperium",
+        'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -40,13 +41,10 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
             // ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Game 21', 'url' => ['/site/entry']],
-            ['label' => 'Yatzy', 'url' => ['#']],
-            // ['label' => 'Hello1', 'url' => ['/hello-world/hello1']],
-            // ['label' => 'Hello2', 'url' => ['/hello-world/hello2']],
-            // ['label' => 'The Message', 'url' => ['/hello-world/hello?message=The-message']],
+            ['label' => 'Game 21', 'url' => ['/site/game']],
+            ['label' => 'Yatzy', 'url' => ['/site/yatzy']],
+            ['label' => 'Books', 'url' => ['/book/index']],
             // ['label' => 'Contact', 'url' => ['/site/contact']],
-            // ['label' => 'Entry', 'url' => ['/site/entry']],
             // Yii::$app->user->isGuest ? (
             //     ['label' => 'Login', 'url' => ['/site/login']]
             // ) : (
@@ -75,7 +73,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= date('Y') ?></p>
+        <p class="pull-left"><?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>

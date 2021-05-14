@@ -12,14 +12,9 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'enableStrictParsing' => false,
-        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 't22G-9sKuAN1M9dCqWZi5QYBZi-ntE82',
+            'cookieValidationKey' => 'm3NQFt_FJWcM5_S_YRFBnzYdGBNAfbr9',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',

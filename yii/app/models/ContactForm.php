@@ -63,4 +63,3 @@ class ContactForm extends Model
         return false;
     }
 }
-

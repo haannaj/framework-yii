@@ -5,6 +5,9 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 
+/**
+ * Dice is the model behind dice.
+ */
 class Dice extends Model
 {
     // const FACES = 6;

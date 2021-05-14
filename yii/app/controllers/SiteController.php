@@ -9,7 +9,8 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
-use app\models\EntryForm;
+use app\models\GameForm;
+use app\models\YatzyForm;
 use app\models\Game21;
 
 class SiteController extends Controller
@@ -129,9 +130,33 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionEntry()
+    /**
+     * Displays about page.
+     *
+     * @return string
+     */
+    public function actionYatzy()
     {
-        $model = new EntryForm();
+        $model = new YatzyForm();
+        
+        if ($model->load(Yii::$app->request->post())) {
+
+            return $this->render('yatzy', ['model' => $model]);
+        } else {
+            // either the page is initially displayed or there is some validation error
+            return $this->render('yatzy', ['model' => $model]);
+        }
+    }
+
+    /**
+     * Displays game page.
+     *
+     * @return string
+     */
+
+    public function actionGame()
+    {
+        $model = new GameForm();
         $dice = new Game21();
         $computer = new Game21();
         
@@ -145,7 +170,7 @@ class SiteController extends Controller
             $countPoints = $dice->pointsRound($points, $model->PP, $model->CP);
             
 
-            return $this->render('entry', ['model' => $model, 
+            return $this->render('game', ['model' => $model, 
             'message' => $dices,
             'sumDices' => $sum,
             'totalDices' => $totalSum,
@@ -156,7 +181,8 @@ class SiteController extends Controller
             'playerPoint' => $countPoints[0]]);
         } else {
             // either the page is initially displayed or there is some validation error
-            return $this->render('entry', ['model' => $model]);
+            return $this->render('game', ['model' => $model]);
         }
     }   
+    
 }

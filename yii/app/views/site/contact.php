@@ -18,12 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="alert alert-success">
             Thank you for contacting us. We will respond to you as soon as possible.
-            <p>You have entered the following information:</p>
-
-            <ul>
-                <li><label>Name</label>: <?= Html::encode($model->name) ?></li>
-                <li><label>Email</label>: <?= Html::encode($model->email) ?></li>
-            </ul>
         </div>
 
         <p>
@@ -56,6 +50,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= $form->field($model, 'subject') ?>
 
                     <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
+
+                    <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+                        'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+                    ]) ?>
 
                     <div class="form-group">
                         <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
